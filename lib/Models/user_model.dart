@@ -9,8 +9,10 @@ class UserModel {
   final String cpf;
   final String telefone;
 
+  
+
   UserModel(
-    //Contrutor
+    //Contrutor exige todos os campos
     this.id,
     this.nome,
     this.idade,
@@ -19,7 +21,7 @@ class UserModel {
     this.telefone,
   );
 
-  Map<String, dynamic> toMap() { //Do objeto para o MAP
+  Map<String, dynamic> toMap() { //Do objeto coverte para o MAP que vai para o banco de dados
     return {
       'nome': nome,
       'email': email,
@@ -29,7 +31,7 @@ class UserModel {
     };
   }
 
-  factory UserModel.fromMap(String id, Map<String, dynamic> map) { //COnverte do Map para o Objeto
+  factory UserModel.fromMap(String id, Map<String, dynamic> map) { //COnverte do Map para o Objeto, acontece a partir de um map.
     return UserModel(
       id,
       map["nome"],

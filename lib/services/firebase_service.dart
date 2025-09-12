@@ -55,7 +55,7 @@ class FirebaseService {
   }
 
   //UPDATE
-  Future<void> update(String, id, Map<String, dynamic> dados) async{
+  Future<void> update(String id, Map<String, dynamic> dados) async{
     try{
      await _firestore.collection(collection).doc(id).update(dados);
     }catch(erro){
