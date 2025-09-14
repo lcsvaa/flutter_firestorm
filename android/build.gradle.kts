@@ -21,9 +21,13 @@ tasks.register<Delete>("clean") {
 }
 
 plugins {
-  // ...
+    // Plugins base
+    id("com.android.application") version "8.2.2" apply false
+    id("org.jetbrains.kotlin.android") version "1.9.22" apply false
 
-  // Add the dependency for the Google services Gradle plugin
-  id("com.google.gms.google-services") version "4.4.3" apply false
+    // ✅ Google Services só declarado aqui
+    id("com.google.gms.google-services") version "4.4.3" apply false
 
+    // ✅ Flutter plugin
+    id("dev.flutter.flutter-gradle-plugin") version "1.0.0" apply false
 }
